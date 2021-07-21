@@ -7,6 +7,7 @@ import 'antd/dist/antd.css';
 import '@shopify/polaris/dist/styles.css';
 
 import logo from './logo.svg';
+import Row from './layout/Row';
 import ZustandCounter from './features/ZustandCounter/ZustandCounter';
 import RecoilCounter from './features/RecoilCounter/RecoilCounter';
 import ContextCounter, { CounterContext } from './features/ContextCounter/ContextCounter';
@@ -23,17 +24,26 @@ function App() {
         <CounterContext.Provider value={{ counter, increment }}>
           <div className="App">
             <header className="App-header">
-              <img src={logo} className="App-logo" alt="logo" />
-              <h3>Proper Redux + Toolkit</h3>
-              <Counter />
-              <h3>Zustand</h3>
-              <ZustandCounter />
-              <h3>Recoil</h3>
-              <RecoilCounter />
-              <h3>UseState &amp; UseContext</h3>
-              <ContextCounter />
-              <h3>Laxy Redux Implementation</h3>
-              <h4>Minimal for comparison</h4>
+              <Row>
+                <h3>Proper Redux + Toolkit</h3>
+                <Counter />
+              </Row>
+              <Row>
+                <h3>Zustand</h3>
+                <ZustandCounter />
+              </Row>
+              <Row>
+                <h3>Recoil</h3>
+                <RecoilCounter />
+              </Row>
+              <Row>
+                <h3>UseState &amp; UseContext</h3>
+                <ContextCounter />
+              </Row>
+              <Row>
+                <h3>Laxy Redux Implementation</h3>
+                <h4>Minimal for comparison</h4>
+              </Row>
               <ReduxCounter />
             </header>
           </div>
