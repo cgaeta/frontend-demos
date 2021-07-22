@@ -11,6 +11,10 @@ const recoilState = atom({
   default: 0,
 });
 
+const memeRequest = () => new Promise((resolve) =>
+  setTimeout(() => resolve(null), 500)
+);
+
 const RecoilCounter = () => {
   const [recoilCounter, setRecoilCounter] = useRecoilState(recoilState)
 
@@ -18,9 +22,19 @@ const RecoilCounter = () => {
     <div>
       <div>{recoilCounter}</div>
       <div>
-        <EvergreenButton onClick={() => setRecoilCounter(recoilCounter + 1)}>
+        <EvergreenButton
+          appearance="primary"
+          onClick={() => setRecoilCounter(recoilCounter + 1)}
+        >
           Evergreen Button
         </EvergreenButton>
+        <EvergreenButton
+          onClick={async () => {
+            await memeRequest();
+            setRecoilCounter((count) => count + 1);
+          }}>
+            Async
+          </EvergreenButton>
       </div>
     </div>
   );
