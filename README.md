@@ -3,6 +3,10 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 ## Where the memes at
 You can start your search at `src/App.tsx` to see what contexts / HOCs are necessary for a lot of these state management solutions to work.
 
+## NOW WITH PARCEL
+See `/scripts/start` and `/scripts/build`? Throw them in the trash. That's for nerds that need to build a Webpack config.
+With some Parcel, we can just run `parcel`, and with minimal config where necessary, it just works :tm:.
+
 ## More specifically
 - Good Redux: `src/features/counter/`
 - Lazy Redux: `src/features/ReduxCounter/ReduxCounter.tsx`
